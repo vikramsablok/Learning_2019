@@ -1,0 +1,39 @@
+﻿@model Chapter5.Models.Product[]
+@{
+    ViewBag.Title = "DemoArray";
+}
+
+<h2>DemoArray</h2>
+<table>
+    <thead>
+        <tr><th>Property</th><th>Value</th></tr>
+    </thead>
+    @if (Model.Length > 0)
+    {
+        <tbody>
+            @foreach (Chapter5.Models.Product p in Model)
+            {
+            <tr><td>Name :  @p.Name</td>
+            <td>Price : @p.Price</td>        
+               
+            </tr>
+            }
+
+        </tbody>
+    }
+    else
+    {
+        <tbody>
+            @foreach (Chapter5.Models.Product p in Model)
+            {
+                <tr>
+                No products
+                </tr>
+            }
+
+        </tbody>
+    }
+</table>
+
+
+

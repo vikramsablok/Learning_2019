@@ -1,0 +1,22 @@
+﻿@model WorkingWithRaizor.Models.Product
+
+@{
+    ViewBag.Title = "DemoExpression";
+    Layout = "~/Views/_BasicLayout.cshtml";
+}
+
+<h2>DemoExpression</h2>
+<table>
+    <thead>
+        <tr><th>Property</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Name</td><td>@Model.Name</td></tr>
+        <tr><td>Price</td><td>@Model.Price</td></tr>
+        <tr><td>Stock Level</td><td>@ViewBag.ProductCount</td></tr>
+        @*<tr><td>Express Shipment</td><td>@Html.CheckBoxFor(ViewBag.ExpressShip)</td></tr>*@
+        <tr><td>Options</td><td>Discount: <input type="checkbox" checked=@ViewBag.ApplyDiscount />
+        Express: <input type="checkbox" checked=@ViewBag.ExpressShip />
+        Supplier: <input type="checkbox" checked=@ViewBag.Supplier /></td></tr>
+    </tbody>
+</table>

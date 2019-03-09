@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .btn a {
+        color: white;
+        text-decoration: none;
+    }
+
+    body {
+        background-color: #F1F1F1;
+    }
+</style>
+
+<h2>Index</h2>
+<div> Hello World (from the view)</div>
+<br />
+@ViewBag.Greeting World (from the view) 
+<br />
+Welcome @ViewBag.CustomerId
+<p class="text-center">
+    We're going to have an exciting party.<br />    
+</p> 
+<div class="btn btn-success">
+    @Html.ActionLink("RSVP Now", "RsvpForm")
+</div>
+

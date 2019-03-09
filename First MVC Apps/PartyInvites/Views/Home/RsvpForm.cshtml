@@ -1,0 +1,33 @@
+﻿@model PartyInvites.Models.GuestResponse
+
+@{
+    ViewBag.Title = "RsvpForm";
+}
+
+@*<h2 class="panel-heading text-center">RSVP Form</h2>*@
+<div class="panel panel-success">
+    <div class="panel-heading text-center"><h4>RSVP</h4></div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+
+        {
+            @Html.ValidationSummary()
+            <div class="form-group"> Your Name : @Html.TextBoxFor(x => x.Name) </div>
+            <div class="form-group"> Your Email : @Html.TextBoxFor(x => x.Email) </div>
+            <div class="form-group"> Your Phone : @Html.TextBoxFor(x => x.Phone)</div>
+            @Html.ValidationMessageFor(x => x.Phone)
+            <div class="form-group">
+                Will you Attend ? :
+                @Html.DropDownListFor(x => x.WillAttend, new[]
+                {
+                     new SelectListItem() {Text = "Yes, I'll be there", Value = bool.TrueString},
+                     new SelectListItem() {Text = "No, I can't come",Value = bool.FalseString}
+
+                }, "Choose a option")
+            </div>
+            <div class="text-center">
+                <input class="btn btn-success" type="submit" value="Submit RSVP" />
+            </div>
+        }
+    </div>
+</div>
